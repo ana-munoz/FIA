@@ -61,8 +61,10 @@ public class Crow {
     protected boolean isFeasible() {
     	 if(instance.problem == 1) 
              return isFeasibleCapability();
-         else if (instance.problem == 2)
-             return isFeasibleMultidimensionalCapability();
+			
+		  else if (instance.problem == 2) 
+			  return isFeasibleMultidimensionalCapability();
+			 
 		return false;
     }
 
@@ -76,24 +78,21 @@ public class Crow {
         return beneficio <= instance.capacidad[type][0];
     }
 
-	private boolean isFeasibleMultidimensionalCapability() {
-		int suma, i=0;
-		boolean beneficio = true;
-		while(i<instance.numMochilas[type] && beneficio) {
-			suma=0;
-			for(int j=0; j<nVariables; j++) {
-				suma+= x[j] * instance.pesos[type][i][j]; 
-			}
-			beneficio = suma <= instance.capacidad[type][i];
-			i++;
-		}
-		return beneficio;
-		
-    }
-
-	/*protected void repare() {
-		vealo el siguiente capítulo :D
-    }*/
+	
+	  private boolean isFeasibleMultidimensionalCapability() { 
+		  int suma, i=0;
+		  boolean beneficio = true; 
+		  while(i<instance.numMochilas[type] && beneficio) {
+			  suma=0; 
+			  for(int j=0; j<nVariables; j++) { 
+				  suma+= x[j] * instance.pesos[type][i][j]; 
+			  } 
+			  beneficio = suma <= instance.capacidad[type][i]; i++; 
+		  } 
+		  return beneficio;
+	  
+	  }
+	 
 
     protected void move(Crow followedCrow, float AP, float flightLenght) {
         

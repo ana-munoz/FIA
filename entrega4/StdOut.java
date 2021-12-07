@@ -1,4 +1,12 @@
 package crow_2;
+/******************************************************************************
+ *  Compilation:  javac StdOut.java
+ *  Execution:    java StdOut
+ *  Dependencies: none
+ *
+ *  Writes data of various types to standard output.
+ *
+ ******************************************************************************/
 
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
